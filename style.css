@@ -1,0 +1,2386 @@
+html,
+body {
+    height: auto;
+    width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#intro .intro-logo {
+    width: 100px;
+    height: 100px;
+    -webkit-mask-image: url("./img/suguru1.png");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("./img/suguru1.png");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: white;
+    animation: fadeIn 1s forwards;
+}
+
+#intro .intro-text {
+    margin-top: 18px;
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#intro .intro-text.show {
+    opacity: 1;
+}
+
+.head1 {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.contact-link {
+    position: fixed;
+    background-color: #222;
+    width: 50px;
+    height: 50px;
+    bottom: -50px;
+    right: 0;
+    z-index: 999;
+    transition: bottom 3s, background-color 0.2s;
+}
+
+.contact-link.slide-in {
+    bottom: 0;
+}
+
+.contact-link.rotate-in {
+    animation: rotateIn 0.5s ease-in-out forwards;
+}
+
+.contact-link.rotate-out {
+    animation: rotateOut 0.5s ease-in-out forwards;
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotateY(-90deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateOut {
+    from {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: rotateY(-90deg);
+        opacity: 0;
+    }
+}
+
+.contact-link:hover {
+    background-color: rgb(105, 105, 105);
+    transition: background-color 0.2s;
+}
+
+.icon {
+    display: inline-block;
+    background-image: url("./img/contact.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 19px;
+    height: 12px;
+    z-index: 1001;
+}
+
+.contact-link a {
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 8px;
+    font-family: Yu Mincho;
+    text-decoration: none;
+    color: white;
+    gap: 5px;
+}
+
+.menu-container {
+    position: fixed;
+    width: 46px;
+    height: 92px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    background-color: rgba(9, 121, 190, 0.95);
+    transition: left 3s;
+}
+
+.home-icon3 {
+    width: 30px;
+    height: 30px;
+    margin: 7px 0 0 8px;
+    -webkit-mask-image: url("./img/suguru1.png");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("./img/suguru1.png");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: white;
+    position: relative;
+    filter: brightness(200%);
+}
+.home-icon3::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-mask-image: url("./img/suguru1.png");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("./img/suguru1.png");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: white;
+    opacity: 1;
+}
+.home-icon2 {
+    width: 46px;
+    height: 46px;
+}
+
+.home-link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.7s ease;
+}
+.home-link:hover {
+    background-color: rgba(4, 60, 95, 0.95);
+    cursor: pointer;
+    transition: background-color 0.7s ease;
+}
+
+.menu-button {
+    width: 46px;
+    height: 46px;
+    padding: 6px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+}
+
+.menu-button span {
+    width: 30%;
+    height: 1.2px;
+    background: #000;
+    transition: all 0.3s;
+}
+
+.menu-button:hover span {
+    width: 50%;
+}
+
+.menu-text {
+    font-size: 8.9px;
+    text-align: center;
+    font-family: Yu Mincho;
+}
+
+.menu-button.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6.5px, 6.5px);
+}
+
+.menu-button.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-button.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.slide-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(59, 59, 59, 0.4);
+    transition: left 1s ease, background-color 1s ease;
+    z-index: 998;
+    pointer-events: none;
+}
+
+.slide-overlay.active {
+    left: 0;
+    background-color: rgba(35, 31, 31, 0.9);
+}
+
+.menu-nav {
+    z-index: 1002;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: Yu Mincho;
+}
+
+.menu-nav ul li {
+    position: relative;
+    display: block;
+    padding: 15px;
+    text-align: center;
+    opacity: 0;
+    transform: translatex(-25vw);
+    transition: opacity 1s ease, transform 1.8s ease;
+}
+
+.slide-overlay.active .menu-nav ul li {
+    opacity: 1;
+    transform: translatex(0);
+}
+
+.menu-nav ul li:nth-child(1) {
+    transition-delay: 0.4s;
+}
+
+.menu-nav ul li:nth-child(2) {
+    transition-delay: 0.6s;
+}
+.menu-nav ul li:nth-child(3) {
+    transition-delay: 0.8s;
+    padding-bottom: 0;
+}
+
+.menu-nav ul li:nth-child(4) {
+    transition-delay: 1s;
+    padding-top: 10px;
+}
+
+.menu-nav ul li:nth-child(4) a {
+    transition-delay: 1.2s;
+    margin: 0 10px 0 10px;
+    font-size: 11px;
+}
+
+.menu-nav ul li:nth-child(5) {
+    transition-delay: 1.4s;
+}
+
+.menu-nav ul li:nth-child(6) {
+    transition-delay: 1.6s;
+}
+.menu-nav ul li:nth-child(7) {
+    transition-delay: 1.8s;
+}
+
+.menu-nav ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5); /* 区切り線のスタイル */
+}
+
+.menu-nav ul li:nth-child(3)::after,
+.menu-nav ul li:nth-child(7)::after {
+    display: none;
+}
+
+.menu-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.horizontal-items {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.horizontal-items a {
+    flex: 1;
+    text-align: center;
+}
+
+.slide-overlay.slide-out {
+    left: -100%;
+    background-color: rgba(59, 59, 59, 0.4);
+}
+
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+/*メニューが画面から外れる時のズレをちょうせい！！！！！！！*/
+
+.slide-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./img/dekiagari.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    visibility: hidden;
+    transform: scale(0.5);
+    transition: opacity 0.5s ease, transform 1s ease, left 1s ease;
+    z-index: 997;
+    overflow: hidden;
+}
+
+.slide-menu.active {
+    visibility: visible;
+    transform: scale(1);
+    pointer-events: auto;
+    overflow: hidden;
+}
+
+.slide-menu.slide-out {
+    left: -100%;
+    opacity: 0;
+}
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(54, 54, 54);
+    overflow: hidden;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(59, 59, 59, 0.5);
+    pointer-events: none;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1);
+    object-fit: cover;
+}
+
+.slide:nth-child(1) {
+    animation: fadeZoomInOut1 15s infinite;
+}
+
+.slide:nth-child(2) {
+    animation: fadeZoomInOut2 15s infinite;
+}
+
+.slide:nth-child(3) {
+    animation: fadeZoomInOut3 15s infinite;
+}
+
+@keyframes fadeZoomInOut1 {
+    0% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+    0.75% {
+        opacity: 0.88;
+        transform: scale(1.001);
+    }
+    1.5% {
+        opacity: 0.91;
+        transform: scale(1.002);
+    }
+    2.25% {
+        opacity: 0.94;
+        transform: scale(1.003);
+    }
+    3.00% {
+        opacity: 0.97;
+        transform: scale(1.004);
+    }
+    3.75% {
+        opacity: 1;
+        transform: scale(1.005);
+    }
+    4.5% {
+        opacity: 1;
+        transform: scale(1.006);
+    }
+    5.25% {
+        opacity: 1;
+        transform: scale(1.007);
+    }
+    6.6% {
+        opacity: 1;
+        transform: scale(1.008);
+    }
+    9.09% {
+        opacity: 1;
+        transform: scale(1.009);
+    }
+    12.12% {
+        opacity: 1;
+        transform: scale(1.01);
+    }
+    15.15% {
+        opacity: 1;
+        transform: scale(1.011);
+    }
+    18.18% {
+        opacity: 0.95;
+        transform: scale(1.012);
+    }
+    21.21% {
+        opacity: 0.9;
+        transform: scale(1.013);
+    }
+    24.24% {
+        opacity: 0.85;
+        transform: scale(1.014);
+    }
+    27.27% {
+        opacity: 0.85;
+        transform: scale(1.015);
+    }
+    30.30% {
+        opacity: 0.85;
+        transform: scale(1.016);
+    }
+    33.3333333333% {
+        opacity: 0.85;
+        transform: scale(1.017);
+    }
+    36.36% {
+        opacity: 0.85;
+        transform: scale(1.018);
+    }
+    39.39% {
+        opacity: 0.85;
+        transform: scale(1.019);
+    }
+    42.42% {
+        opacity: 0;
+        transform: scale(1.02);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(1.021);
+    }
+    93% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    94% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    96% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+    98% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeZoomInOut2 {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    30% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    33.3333333333% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+    33.75% {
+        opacity: 0.88;
+        transform: scale(1.001);
+    }
+    34.5% {
+        opacity: 0.91;
+        transform: scale(1.002);
+    }
+    35.25% {
+        opacity: 0.94;
+        transform: scale(1.003);
+    }
+    36% {
+        opacity: 0.97;
+        transform: scale(1.004);
+    }
+    36.75% {
+        opacity: 1;
+        transform: scale(1.005);
+    }
+    37.5% {
+        opacity: 1;
+        transform: scale(1.006);
+    }
+    38.25% {
+        opacity: 1;
+        transform: scale(1.007);
+    }
+    39.6% {
+        opacity: 1;
+        transform: scale(1.008);
+    }
+    42.42% {
+        opacity: 1;
+        transform: scale(1.009);
+    }
+    45.45% {
+        opacity: 1;
+        transform: scale(1.01);
+    }
+    48.48% {
+        opacity: 1;
+        transform: scale(1.011);
+    }
+    51.51% {
+        opacity: 0.95;
+        transform: scale(1.012);
+    }
+    54.54% {
+        opacity: 0.9;
+        transform: scale(1.013);
+    }
+    57.57% {
+        opacity: 0.85;
+        transform: scale(1.014);
+    }
+    60.60% {
+        opacity: 0.83;
+        transform: scale(1.015);
+    }
+    63.63% {
+        opacity: 0.8;
+        transform: scale(1.016);
+    }
+    66.666666666666% {
+        opacity: 0.8;
+        transform: scale(1.017);
+    }
+    69.69% {
+        opacity: 0.77;
+        transform: scale(1.018);
+    }
+    72.72% {
+        opacity: 0.75;
+        transform: scale(1.019);
+    }
+    75.75% {
+        opacity: 0.73;
+        transform: scale(1.02);
+    }
+    80% {
+        opacity: 0;
+        transform: scale(1.0085);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.009);
+    }
+}
+
+@keyframes fadeZoomInOut3 {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    55% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    63% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    66.66666666666% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+    66.75% {
+        opacity: 0.88;
+        transform: scale(1.001);
+    }
+    67.5% {
+        opacity: 0.91;
+        transform: scale(1.002);
+    }
+    68.25% {
+        opacity: 0.94;
+        transform: scale(1.003);
+    }
+    69.00% {
+        opacity: 0.97;
+        transform: scale(1.004);
+    }
+    70.75% {
+        opacity: 1;
+        transform: scale(1.005);
+    }
+    71.5% {
+        opacity: 1;
+        transform: scale(1.006);
+    }
+    72.25% {
+        opacity: 1;
+        transform: scale(1.007);
+    }
+    73.73% {
+        opacity: 1;
+        transform: scale(1.008);
+    }
+    76.76% {
+        opacity: 1;
+        transform: scale(1.009);
+    }
+    79.79% {
+        opacity: 1;
+        transform: scale(1.01);
+    }
+    81.81% {
+        opacity: 1;
+        transform: scale(1.011);
+    }
+    84.84% {
+        opacity: 0.95;
+        transform: scale(1.012);
+    }
+    87.87% {
+        opacity: 0.9;
+        transform: scale(1.013);
+    }
+    90.90% {
+        opacity: 0.85;
+        transform: scale(1.014);
+    }
+    93.93% {
+        opacity: 0.85;
+        transform: scale(1.015);
+    }
+    96.96% {
+        opacity: 0.85;
+        transform: scale(1.016);
+    }
+    100% {
+        opacity: 0.85;
+        transform: scale(1.017);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.suguru-logo1 {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 140px;
+}
+
+.suguru-logo1 .intro-logo {
+    width: 34px;
+    height: 34px;
+    -webkit-mask-image: url("./img/suguru1.png");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-image: url("./img/suguru1.png");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: white;
+    opacity: 0;
+    transform: translateY(60%);
+    animation: fadeInFromBottomSuguruLogo 1.3s forwards;
+    animation-delay: 1.4s;
+}
+
+@keyframes fadeInFromBottomSuguruLogo {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.suguru-logo1 .intro-text {
+    font-size: 10px;
+    margin-top: 10px;
+    letter-spacing: 0.2em;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50%);
+    animation: fadeInFromBottomSuguru 1.3s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInFromBottomSuguru {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.suguru-logo1-company-name {
+    font-size: 34px;
+    font-family: Yu Mincho;
+    letter-spacing: 0.2em;
+    margin-top: 13px;
+    font-weight: 400;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInFromCenter 1s forwards;
+}
+@media screen and (max-width: 360px) {
+    .suguru-logo1 {
+        height: 210px;
+    }
+    .suguru-logo1-company-name {
+        display: inline-block;
+        width: 200px;
+        height: 72px;
+    }
+}
+
+@keyframes fadeInFromCenter {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.suguru-logo1-company-policy {
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    font-family: Yu Mincho;
+    margin-top: 11px;
+    font-weight: 200;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-50%);
+    animation: fadeInFromTopP 1.3s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeInFromTopP {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll {
+    width: 30px;
+    height: 30px;
+    border: 0.8px solid #eee;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 21px;
+    animation: down 3.6s infinite;
+}
+
+.scroll::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-left: 0.8px solid #eee;
+    border-bottom: 0.8px solid #eee;
+    transform: rotate(-45deg);
+}
+
+@keyframes down {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translateY(8px);
+    }
+    40% {
+        transform: translate(0);
+    }
+}
+
+.main {
+    width: calc(100vw - 10px); /* ビューポート幅から余白を減らす */
+    padding-top: 5vh;
+    overflow: hidden;
+}
+
+.suguru-info {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    margin: 5% auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.flipLeftTopTrigger {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.flipLeftTop {
+    animation-name: flipLeftTopAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flipLeftTopAnime {
+    from {
+        transform: translate(-20px, 80px) rotate(-15deg);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.memo-container {
+    font-family: Yu Mincho;
+    position: absolute;
+    width: 30vw;
+    height: 60vh;
+    top: 7vh;
+    left: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.97);
+    padding: 12px;
+    opacity: 0;
+    transform: scale(0);
+    animation-delay: 2s;
+    transition: opacity 3s, transform 3s;
+}
+
+.introduction {
+    margin: 15px 0;
+}
+
+.ptag {
+    font-family: Monotype Corsiva;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+}
+
+.introduction-text {
+    font-size: 8.9px;
+    margin-bottom: 15px;
+    line-height: 1.8em;
+}
+
+.memo-photo {
+    width: 25vw;
+    height: 25vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: contrast(0.6);
+    margin-top: 15px;
+}
+@media screen and (max-width: 480px) {
+    .suguru-info {
+        height: 400px;
+    }
+    .memo-container {
+        width: 45vw;
+        height: auto;
+        left: 13%;
+        padding: 10px;
+    }
+    .memo-photo {
+        width: 100%;
+    }
+}
+
+.link-container {
+    display: inline-block;
+}
+
+.memo-text a {
+    font-size: 8.9px;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    transition: color 1s ease;
+}
+.memo-text a:hover {
+    color: #ff7043;
+    transition: color 1s ease;
+}
+.memo-text a:visited {
+    color: #ff4081;
+}
+.memo-text a:active {
+    color: #26a69a;
+}
+
+.memo-container.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.memo-text .arrow {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    transform: scaleX(1);
+    transform-origin: left center;
+    margin-left: 5px;
+}
+
+.memo-text a:hover .arrow {
+    transform: scaleX(2.5);
+}
+
+@media screen and (max-width: 480px) {
+    .suguru-info {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 90vh;
+        margin: 20px;
+        overflow: hidden;
+    }
+}
+
+.famous {
+    position: absolute;
+    top: 6vh;
+    right: 20vw;
+    padding: 25px 10px 30px 10px;
+    background-color: white;
+    writing-mode: vertical-rl;
+    opacity: 0;
+    transform: scale(0);
+    animation-delay: 2s;
+    transition: opacity 3s, transform 3s;
+}
+
+@media screen and (max-width: 480px) {
+    .famous {
+        right: 5vw;
+    }
+}
+
+.famous.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.famous-main {
+    display: block;
+    font-family: Yu Mincho;
+    font-size: 25px;
+}
+.famous-sub {
+    display: block;
+    font-size: 10px;
+    font-family: Monotype Corsiva, Cambria;
+    letter-spacing: 0.1em;
+}
+
+.works-main {
+    width: 100%;
+    padding: 50px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.works-main-wrapper {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.works-main-photo-slide {
+    position: absolute;
+    box-sizing: border-box;
+    top: 2vh;
+    left: 13vw;
+    width: 60.2vw;
+    height: 70.2vh;
+    background-color: #fff;
+    z-index: 2;
+    transition: transform 1.5s ease-out;
+    transform-origin: left;
+}
+/* visibility: hidden; */
+.works-main-photo-slide.hidden {
+    transition: transform 1.5s ease-out;
+    transform: translateX(100%) scaleX(0);
+}
+.works-main-photo-filter {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* 黒の半透明オーバーレイ */
+    z-index: 3; /* 画像より前に表示 */
+    transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+    transform-origin: left;
+    opacity: 0;
+    transform: scaleX(0);
+}
+.works-main-photo-filter.hidden {
+    opacity: 1;
+    transform: scaleX(1);
+}
+.works-main-photo {
+    position: relative;
+    box-sizing: border-box;
+    top: 2vh;
+    left: 13vw;
+    width: 60vw;
+    height: 70vh;
+    background-image: url("./img/reform1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* @media screen and (max-width: 600px) {
+    .works-main-photo {
+        width: 297px;
+    }
+    .works-main-back {
+        width: 700px;
+    }
+} */
+.works-main-back {
+    position: absolute;
+    left: 5vw;
+    top: 40vh;
+    width: 72vw;
+    height: 35vh;
+    background-color: #dddddd;
+    z-index: 1;
+    transition: width 2s ease-out;
+}
+.works-main-back.hidden {
+    transition: width 2s ease-out;
+    width: 70vw;
+}
+.works-main-back:not(.hidden) {
+    width: 0; /* クラスが外れたときはゆっくり表示 */
+    transition: width 0.3s ease-out; /* ゆっくり表示 */
+}
+
+.works-main-content {
+    width: auto;
+    height: 73vh;
+    position: relative;
+}
+
+.works-main-content-text {
+    position: absolute;
+    width: 8vw;
+    top: 2vh;
+    left: 5vw;
+    writing-mode: vertical-rl;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 3.5s ease;
+}
+.works-main-content-text.visible {
+    opacity: 1;
+}
+
+.main-content-text2 {
+    display: block;
+    font-size: 10px;
+    font-family: Monotype Corsiva, Cambria;
+    letter-spacing: 0.1em;
+}
+
+.main-content-text1 {
+    display: block;
+    font-family: Yu Mincho;
+    font-size: 17px;
+    margin-right: 0.5vw;
+}
+
+.works-main-memo {
+    width: 20vw;
+    font-family: Yu Mincho;
+    position: absolute;
+    right: 2vw;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 3.5s ease;
+}
+.works-main-memo.visible {
+    opacity: 1;
+}
+
+.horizontal-line {
+    border: none;
+    height: 0.5px;
+    width: 2vw;
+    background-color: #000;
+    margin: 3vh 0 0 0.5vw;
+}
+
+.works-main-memo-text1 {
+    font-size: 17px;
+    letter-spacing: 0.1em;
+    line-height: 1.6em;
+    margin: 5vh 0 0 0.5vw;
+}
+
+.works-main-memo-text2 {
+    font-size: 8.9px;
+    line-height: 1.9em;
+    margin: 5vh 0 0 0.5vw;
+}
+.works-main-memo-link {
+    border: #000 1px solid;
+    width: 19vw;
+    height: 8vh;
+    margin: 5vh 0 0 0.5vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.works-main-memo-link a {
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 3vh;
+    width: 19vw;
+    height: 8vh;
+    font-size: 8.9px;
+    color: #000;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s ease;
+}
+
+.works-main-memo-link a .arrow2 {
+    display: inline-block;
+    transition: transform 0.5s ease, color 0.5s ease;
+    transform: scaleX(1);
+    transform-origin: left center;
+    margin-left: 1vw;
+    color: #000;
+}
+
+.works-main-memo-link a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: left 0.5s ease;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.works-main-memo-link a:hover::before {
+    left: 0;
+}
+
+.works-main-memo-link a:hover {
+    color: #fff;
+}
+
+.works-main-memo-link a:hover .arrow2 {
+    transform: scaleX(2.5);
+    color: #fff;
+}
+
+.works-Interior-text,
+.works-exterior-text,
+.works-store-text {
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+.works-Interior-text.show,
+.works-exterior-text.show,
+.works-store-text.show {
+    opacity: 1;
+}
+
+.works-Interior {
+    position: relative;
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.works-Interior-image {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.works-Interior-image1 {
+    position: absolute;
+    top: 10vh;
+    right: 12vw;
+    width: 57vw;
+    height: 60vh;
+    background-image: url("./img/reform2.jpg");
+    filter: brightness(0.87);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.works-Interior-text {
+    position: absolute;
+    top: 15vh;
+    left: 6.5vw;
+    width: 27.5vw;
+    height: 58vh;
+    position: relative;
+    border: gray 0.5px solid;
+    font-family: Yu Mincho;
+    padding: 4vh 4vw 0 3vw;
+    z-index: 1;
+}
+
+.works-Interior-text1 {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    margin-top: 8.5vh;
+}
+.works-Interior-text1-1 {
+    display: inline-block;
+    font-size: 8.8px;
+    letter-spacing: 0.1em;
+    font-family: Monotype Corsiva, Cambria;
+    margin-top: 3vh;
+}
+
+.works-Interior-text2 {
+    font-size: 8.5px;
+    line-height: 1.9em;
+    margin-top: 4vh;
+}
+
+.works-Interior-link {
+    margin-top: 2vh;
+    display: inline-block;
+}
+
+.works-Interior-link a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 8.9px;
+    color: #000;
+    transition: color 0s ease;
+}
+.Interior-arrow {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    transform: scaleX(1);
+    transform-origin: left center;
+    margin-left: 5px;
+}
+.works-Interior-link a:hover .Interior-arrow {
+    transform: scaleX(2.5);
+}
+
+.works-Interior-link a:hover {
+    color: #ff7043;
+    transition: color 0s ease;
+}
+
+.works-Interior-link a:active {
+    color: #26a69a;
+}
+
+.works-exterior {
+    position: relative;
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+.works-exterior-image {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    overflow: hidden;
+}
+.works-exterior-image1 {
+    position: absolute;
+    top: 10vh;
+    left: 6.5vw;
+    width: 57vw;
+    height: 60vh;
+    background-image: url("./img/reform7.jpg");
+    filter: brightness(0.95);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.works-exterior-text {
+    position: absolute;
+    top: 15vh;
+    right: 12vw;
+    width: 27.5vw;
+    height: 58vh;
+    position: relative;
+    border: gray 0.5px solid;
+    font-family: Yu Mincho;
+    padding: 4vh 3vw 0 4vw;
+    z-index: 1;
+}
+.works-exterior-text1 {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    margin-top: 8.5vh;
+}
+.works-exterior-text1-1 {
+    display: inline-block;
+    font-size: 8.8px;
+    letter-spacing: 0.1em;
+    font-family: Monotype Corsiva, Cambria;
+    margin-top: 3vh;
+}
+.works-exterior-text2 {
+    font-size: 8.9px;
+    line-height: 1.9em;
+    margin-top: 4vh;
+}
+
+.works-exterior-link {
+    margin-top: 2vh;
+    display: inline-block;
+}
+
+.works-exterior-link a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 8.9px;
+    color: #000;
+    transition: color 0s ease;
+}
+.exterior-arrow {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    transform: scaleX(1);
+    transform-origin: left center;
+    margin-left: 5px;
+}
+.works-exterior-link a:hover .exterior-arrow {
+    transform: scaleX(2.5);
+}
+.works-exterior-link a:hover {
+    color: #ff7043;
+    transition: color 0s ease;
+}
+
+.works-exterior-link a:active {
+    color: #26a69a;
+}
+
+.works-store {
+    position: relative;
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.works-store-image {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.works-store-image1 {
+    position: absolute;
+    top: 10vh;
+    right: 12vw;
+    width: 57vw;
+    height: 60vh;
+    background-image: url("./img/reform5.webp");
+    /* filter: brightness(0.8); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.works-store-text {
+    position: absolute;
+    top: 18vh;
+    left: 6.5vw;
+    width: 27.5vw;
+    height: 58vh;
+    position: relative;
+    border: gray 0.5px solid;
+    font-family: Yu Mincho;
+    padding: 4vh 3vw 0 3vw;
+    z-index: 1;
+}
+
+.works-store-text1 {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    margin-top: 8.5vh;
+}
+.works-store-text1-1 {
+    display: inline-block;
+    font-size: 8.8px;
+    letter-spacing: 0.1em;
+    font-family: Yu Mincho;
+    margin-top: 3vh;
+}
+
+.works-store-text2 {
+    font-size: 8.9px;
+    line-height: 1.9em;
+    margin-top: 4vh;
+}
+
+.works-store-link {
+    margin-top: 2vh;
+    display: inline-block;
+}
+
+.works-store-link a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 8.9px;
+    color: #000;
+    transition: color 0s ease;
+}
+.store-arrow {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    transform: scaleX(1);
+    transform-origin: left center;
+    margin-left: 5px;
+}
+.works-store-link a:hover .store-arrow {
+    transform: scaleX(2.5);
+}
+.works-store-link a:hover {
+    color: #ff7043;
+    transition: color 0s ease;
+}
+
+.works-store-link a:active {
+    color: #26a69a;
+}
+
+.willingness {
+    width: 93vw;
+    height: 70vh;
+    overflow-x: hidden;
+    padding: 5vh 0 0 6vw;
+}
+
+.willingness-image {
+    width: 93vw;
+    height: 65vh;
+    background-image: url("./img/reform9.jpg");
+    backdrop-filter: brightness(0.87);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.willingness-image-text {
+    position: absolute;
+    top: 5vh;
+    right: 13vw;
+    padding: 25px 10px 30px 10px;
+    background-color: white;
+    writing-mode: vertical-rl;
+    transform: scaleX(0);
+    transition: transform 3s ease;
+    filter: none;
+}
+.willingness-image-text.visible {
+    transform: scalex(1);
+}
+
+.willingness-main {
+    display: block;
+    font-family: Yu Mincho;
+    font-size: 25px;
+}
+
+.willingness-sub {
+    display: block;
+    font-size: 10px;
+    font-family: Yu Mincho;
+    letter-spacing: 0.1em;
+}
+
+.recruit {
+    width: 100vw;
+    height: 50vh;
+    overflow-x: hidden;
+    text-align: center;
+    padding-top: 10vh;
+}
+.recruit-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平方向の中央揃え */
+    text-align: center;
+    padding: 0 10vw;
+}
+
+.recruit-title {
+    font-family: Yu Mincho;
+    font-size: 17px;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+.recruit-title2 {
+    display: inline-flex;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    margin-top: 2vh;
+    font-family: Yu Mincho;
+    align-items: center;
+    text-align: center;
+    width: 70px;
+}
+.recruit-title2::before,
+.recruit-title2::after {
+    content: "";
+    display: inline-block;
+    width: 40%;
+    height: 0.5px;
+    background-color: #000;
+}
+
+.recruit-title2::before {
+    margin-right: 5px;
+}
+
+.recruit-title2::after {
+    margin-left: 5px;
+}
+
+.recruit-article {
+    font-size: 8.8px;
+    letter-spacing: 0.1em;
+    margin-top: 4.5vh;
+}
+
+.recruit-link {
+    border: #000 1px solid;
+    width: 32vw;
+    height: 8vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+}
+.recruit-link a {
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 3vh;
+    width: 32vw;
+    height: 8vh;
+    font-size: 8.8px;
+    letter-spacing: 0.1em;
+    color: #000;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s ease;
+}
+
+.recruit-link a .recruit-arrow {
+    display: inline-block;
+    transition: transform 0.5s ease, color 0.5s ease;
+    transform: scaleX(1);
+    transform-origin: left center;
+    position: absolute;
+    right: 4vw;
+    color: #000;
+}
+
+.recruit-link a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: left 0.5s ease;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.recruit-link a:hover::before {
+    left: 0;
+}
+
+.recruit-link a:hover {
+    color: #fff;
+}
+
+.recruit-link a:hover .recruit-arrow {
+    transform: scaleX(2);
+    color: #fff;
+}
+
+.map {
+    width: 100%;
+    height: 90vh;
+}
+.map-image {
+    width: 95vw;
+    height: 70vh;
+    background-image: url("./img/map.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.map-text {
+    width: 25vw;
+    height: 40vh;
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    background-color: white;
+    padding: 3.7vh 3vw;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 3s, transform 3s;
+}
+.map-text-inner {
+    width: 24vw;
+    height: 34vh;
+    font-family: 游ゴシック, YuGothic, "ヒラギノ角ゴ ProN W3",
+        "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+    letter-spacing: 0.1em;
+}
+.map-title {
+    font-size: 10px;
+    margin: 15px 0 20px 0;
+    font-weight: 550;
+}
+.map-data-desc {
+    font-size: 8px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.map-data-desc dt {
+    flex: 0 0 50px;
+}
+
+.map-data-desc dd {
+    flex: 0 0 128px;
+    margin-bottom: 5px;
+}
+
+.map-link {
+    margin-top: 20px;
+    font-size: 8px;
+    display: inline-block;
+}
+.map-link a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    transition: color 1s ease;
+}
+.map-link a:hover {
+    color: #ff7043;
+    transition: color 1s ease;
+}
+
+.map-link a:active {
+    color: #26a69a;
+}
+
+.map-text.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.map-arrow {
+    display: inline-block;
+    transition: transform 0.5s ease;
+    transform: scaleX(1);
+    transform-origin: left center;
+    margin-left: 5px;
+}
+
+.map-link a:hover .map-arrow {
+    transform: scaleX(2.5);
+}
+
+#footer {
+    background-color: #222;
+    color: #fff;
+    padding: 14px 0;
+    font-family: 游ゴシック, YuGothic, "ヒラギノ角ゴ ProN W3",
+        "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+}
+.footer-left {
+    margin-left: 10vw;
+    width: 210px;
+}
+
+.footer-other {
+    display: flex;
+    font-size: 8px;
+    width: 100%;
+}
+.footer-other p {
+    width: 100%;
+}
+
+.footer-other a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-other a:hover {
+    color: #ccc;
+}
+
+.footer-copy {
+    margin-top: 10px;
+    font-size: 6.3px;
+}
+
+.pagetop {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.pagetop-link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pagetop-link:hover {
+    background-color: #ccc; /* ホバー時の背景色を変更 */
+}
+
+.pagetop-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: url("./img/arrow-icon.png") no-repeat center center;
+    background-size: contain;
+    transition: background-image 0.3s, transform 0.3s;
+}
+
+.pagetop-link:hover .pagetop-icon {
+    background-image: url("./img/arrow-icon-gray.png");
+    animation: hoverAnimation 0.5s infinite alternate;
+}
+
+@keyframes hoverAnimation {
+    0% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(3px);
+    }
+}
+
+.footer-divider {
+    border-left: 1px solid #ccc; /* 垂直線を定義 */
+    height: 7px; /* 垂直線の高さ */
+    margin: 0 20px 0 9px; /* 上下のマージンを設定 */
+}
+
+.suguru-wrapper {
+    background-color: #f5f4f4;
+    width: 100vw;
+    padding-bottom: 10vh;
+    font-family: Yu Mincho;
+}
+
+.suguru-header {
+    width: 100vw;
+    height: auto;
+    text-align: center;
+    background-color: #fff;
+    padding-bottom: 3.5vh;
+}
+
+.privacy-title {
+    font-family: Yu Mincho;
+    text-align: center;
+}
+
+.privacy-title-suguru {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    font-weight: 900;
+    margin: 20px 0 0 0;
+}
+.privacy-title-suguru a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #000;
+}
+
+.privacy-title1 {
+    margin: 11px 0 0 0;
+    font-size: 25px;
+    letter-spacing: 0.1em;
+    line-height: 1;
+}
+
+.privacy-title-sub {
+    font-size: 9px;
+    margin: 4.3px 0 0 0;
+    letter-spacing: 0.1em;
+    font-family: Monotype Corsiva, Cambria;
+}
+
+.privacy-title-sub::before,
+.privacy-title-sub::after {
+    content: "";
+    display: inline-block;
+    width: 13px;
+    border-top: 0.7px solid black;
+    margin: 0 7px 1px 7px;
+}
+
+.suguru-main {
+    width: 75vw;
+    background-color: #fff;
+    margin: 40px 0 0 13vw;
+    padding: 30px 6vw 30px 6vw;
+}
+
+.privacy-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.privacy-header-title {
+    font-size: 17px;
+    letter-spacing: 0.1em;
+}
+
+.privacy-header-title::after {
+    content: "";
+    display: block;
+    width: 15px;
+    margin: 0 auto;
+    border-top: 0.7px solid rgb(64, 64, 64);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.suguru-main-privacy h2 {
+    font-size: 14px;
+}
+
+.suguru-main-privacy p {
+    font-size: 8px;
+    line-height: 2;
+}
+
+.privacy-body a {
+    color: #000;
+}
+
+.privacy-body h2 {
+    margin: 19px 0 16px 0;
+    position: relative;
+}
+
+.privacy-body h2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    border-bottom: 0.7px solid #cbc9c9;
+}
+
+.info-main {
+    width: 100vw;
+    height: auto;
+}
+
+.info-image {
+    background-image: url("./img/info-image2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 90vh;
+}
+
+.info-copy {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8vh;
+}
+
+.info-copy-inner {
+    width: 70vw;
+    height: 30vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-copy-image {
+    background-image: url("./img/seisinseii.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 60vw;
+    height: 25vh;
+    filter: contrast(150%) brightness(110%);
+}
+
+.info-philosophy {
+    width: 100vw;
+    text-align: center;
+}
+
+.philosophy-title {
+    width: 100vw;
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.philosophy-title-main {
+    margin: 11px 0 0 0;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-family: Yu Mincho;
+}
+
+.philosophy-title-sub {
+    font-size: 9px;
+    margin: 4.3px 0 0 0;
+    letter-spacing: 0.1em;
+    font-family: Monotype Corsiva, Cambria;
+}
+
+.philosophy-title-sub::before,
+.philosophy-title-sub::after {
+    content: "";
+    display: inline-block;
+    width: 13px;
+    border-top: 0.7px solid black;
+    margin: 0 7px 1px 7px;
+}
+
+.philosophy-content {
+    width: 100vw;
+    height: auto;
+    margin-top: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.philosophy-content-inner {
+    width: 70vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-inner1 {
+    width: 30vw;
+    height: auto;
+    border: #ccc 1px solid;
+    font-family: Yu Mincho;
+    text-align: center;
+    padding: 25px 20px 30px 20px;
+}
+
+@media screen and (max-width: 780px) {
+    .philosophy-content-inner {
+        flex-direction: column;
+        width: 100vw;
+    }
+    .content-inner1 {
+        width: 90vw;
+        margin-top: 11px;
+    }
+}
+
+.inner1-title {
+    font-size: 8px;
+}
+
+.inner1-title-sub {
+    margin-top: 2vh;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+}
+
+.horizontal-lines {
+    border: none;
+    height: 0.3px;
+    width: 15px;
+    background-color: #000;
+    margin: 3.5vh auto;
+}
+
+.philosophy-text {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    line-height: 2;
+}
+
+.info-policy {
+    width: 100vw;
+    text-align: center;
+    margin-top: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-policy-inner {
+    width: 96vw;
+    background-color: #e0dfdf;
+    padding: 10vh 0 10vh 0;
+}
+
+.policy-title {
+    width: 96vw;
+    text-align: center;
+}
+
+.policy-title-main {
+    margin: 11px 0 0 0;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    font-family: Yu Mincho;
+}
+
+.policy-title-sub {
+    font-size: 9px;
+    margin: 4.3px 0 0 0;
+    letter-spacing: 0.1em;
+    font-family: Monotype Corsiva, Cambria;
+}
+
+.policy-title-sub::before,
+.policy-title-sub::after {
+    content: "";
+    display: inline-block;
+    width: 13px;
+    border-top: 0.7px solid black;
+    margin: 0 7px 1px 7px;
+}
+
+.policy-content {
+    width: 96vw;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.policy-content-inner {
+    width: 93vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.policy-content-inner1 {
+    width: 28vw;
+    height: 42vh;
+    border-radius: 50px;
+    background-color: #fff;
+    font-family: Yu Mincho;
+    text-align: center;
+    padding: 20px 10px;
+    flex: 1;
+    margin: 10px;
+}
+
+@media screen and (max-width: 780px) {
+    .info-policy {
+        margin-top: 5vh;
+    }
+
+    .info-policy-inner {
+        padding: 6vh 0 6vh 0;
+    }
+
+    .policy-content-inner {
+        flex-direction: column;
+    }
+
+    .policy-content-inner1 {
+        width: 80vw;
+        border-radius: 0;
+        padding: 5px 10px;
+    }
+}
+
+.policy-inner1-title {
+    font-size: 8px;
+    font-family: Monotype Corsiva, Cambria;
+}
+.policy-inner1-title-sub {
+    margin-top: 2vh;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+}
+
+.policy-horizontal-lines {
+    border: none;
+    height: 0.3px;
+    width: 15px;
+    background-color: #000;
+    margin: 3.5vh auto;
+}
+
+.policy-text {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    line-height: 2;
+}
+
+.policy-text2 {
+    margin-top: 10px;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+}
+
+.info-outline {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 13vh;
+}
+
+.info-outline-inner {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outline-inner-heading {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+}
+
+.outline-head {
+    writing-mode: vertical-rl;
+}
+
+.outline-head-title {
+    font-family: Yu Mincho;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.outline-head-subtitle {
+    font-size: 12px;
+    font-family: Monotype Corsiva, Cambria;
+}
+
+.outline-body {
+    margin-left: 5vw;
+}
+
+.outline-table {
+    font-size: 9px;
+    font-family: Yu Mincho;
+}
+
+.info-recruit {
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+}
+
+.info-recruit-image {
+    width: 96vw;
+    height: 40vh;
+    background-image: url("./img/reform9.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.recruit-link a:hover::before {
+    transform: scaleX(1);
+}
+
+.info-recruit-image-inner {
+    width: 96vw;
+    height: 40vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
