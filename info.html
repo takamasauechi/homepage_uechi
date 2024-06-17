@@ -9,7 +9,7 @@
         <style>
             html,
             body {
-                background-color: whitei;
+                background-color: white;
             }
 
             .contact-link {
@@ -47,8 +47,11 @@
                 top: 50%;
                 transform: translateY(-50%);
             }
+            .info-recruit {
+                margin-top: 10vh;
+            }
+
             .recruit-message {
-                z-index: 1;
                 color: white;
             }
             .recruit-title {
@@ -65,19 +68,17 @@
                 border: white 1px solid;
                 margin-top: 3vh;
             }
-            .recruit-link a {
+            .recruit-link a .recruit-saiyou {
                 color: white;
             }
             .recruit-link a .recruit-arrow {
                 color: white;
             }
             .recruit-link a::before {
-                background-color: white;
-                transform: scaleX(0); /* 初期状態では非表示 */
-                transform-origin: right;
-                transition: transform 0.3s ease;
+                background-color: rgb(255, 255, 255);
             }
-            .recruit-link a:hover {
+
+            .recruit-link a:hover .recruit-saiyou {
                 color: #000;
             }
 
@@ -317,9 +318,9 @@
                                 <p class="recruit-title2">Recruit</p>
                                 <div class="recruit-link">
                                     <a href="recruit.html"
-                                        >採用情報<span class="recruit-arrow"
-                                            >→</span
-                                        ></a
+                                        ><span class="recruit-saiyou"
+                                            >採用情報</span
+                                        ><span class="recruit-arrow">→</span></a
                                     >
                                 </div>
                             </div>

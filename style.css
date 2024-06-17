@@ -1721,6 +1721,16 @@ body {
     transition: color 0.5s ease;
 }
 
+.recruit-link a .recruit-saiyou {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: color 0.5s ease;
+    color: #000;
+}
+
 .recruit-link a .recruit-arrow {
     display: inline-block;
     transition: transform 0.5s ease, color 0.5s ease;
@@ -1739,17 +1749,19 @@ body {
     width: 100%;
     height: 100%;
     background-color: #000;
-    transition: left 0.5s ease;
-    z-index: -1;
-    overflow: hidden;
+    transition: left 0.6s ease, opacity 0.6s ease;
+    z-index: 0;
+    opacity: 0;
 }
 
-.recruit-link a:hover::before {
+.recruit-link:hover a::before {
     left: 0;
+    opacity: 1;
 }
 
-.recruit-link a:hover {
+.recruit-link:hover a .recruit-saiyou {
     color: #fff;
+    z-index: 10;
 }
 
 .recruit-link a:hover .recruit-arrow {
