@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>information</title>
+        <title>英ホームができること</title>
         <link rel="stylesheet" href="reset.css" />
         <link rel="stylesheet" href="style.css" />
         <style>
@@ -14,6 +14,45 @@
 
             .suguru-wrapper {
                 background-color: #fff;
+            }
+
+            .suguru-header {
+                height: 242px;
+                padding: 0;
+            }
+
+            .suguru-header {
+                min-height: 32.5vh;
+                padding: 0;
+            }
+
+            @media screen and (max-width: 900) {
+                .suguru-header {
+                    min-width: 25vh;
+                }
+            }
+
+            @media screen and (max-width: 780px) {
+                .suguru-header {
+                    height: 400px;
+                    padding: 0;
+                }
+
+                .privacy-title {
+                    background-image: url("./img/dekirukoto.jpeg");
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    width: 100vw;
+                    height: 349px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+
+                .job-image {
+                    display: none;
+                }
             }
 
             .contact-link {
@@ -79,8 +118,29 @@
                     <p class="privacy-title-suguru">
                         <a href="index.html">英ホーム株式会社</a>
                     </p>
-                    <h1 class="privacy-title1">英ホームについて</h1>
-                    <p class="privacy-title-sub">About</p>
+                    <h1 class="privacy-title1">英ホームができること</h1>
+                    <p class="privacy-title-sub">Works</p>
+                </div>
+                <div class="privacy-job"></div>
+                <div class="job-main-inner1">
+                    <ul class="job-list">
+                        <li>
+                            <a href="job.html"
+                                ><span>英ホームができること</span></a
+                            >
+                        </li>
+                        <li>
+                            <a href="#"><span>内装リフォーム工事</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>外装リフォーム工事</span></a>
+                        </li>
+                        <li>
+                            <a class="right-border" href="#"
+                                ><span>店舗設計・施工</span></a
+                            >
+                        </li>
+                    </ul>
                 </div>
             </header>
             <div class="menu-container">
@@ -120,181 +180,89 @@
             </div>
             <div class="slide-menu" id="slide-menu"></div>
 
-            <main class="info-main">
-                <div class="info-image">
-                    <div class="info-image-jpg"></div>
+            <main class="job-main">
+                <div class="job-main-inner">
+                    <div class="job-image">
+                        <div class="job-image-img"></div>
+                    </div>
                 </div>
-                <section class="info-copy">
-                    <div class="info-copy-inner">
-                        <div class="info-copy-image"></div>
-                    </div>
-                </section>
-                <section class="info-Philosophy">
-                    <div class="philosophy-title">
-                        <h6 class="philosophy-title-main">理念</h6>
-                        <p class="philosophy-title-sub">Philosophy</p>
-                    </div>
-                    <div class="philosophy-content">
-                        <div class="philosophy-content-inner">
-                            <div class="content-inner1">
-                                <h4 class="inner1-title">企業理念</h4>
-                                <h2 class="inner1-title-sub">住まい刷新</h2>
-                                <hr class="horizontal-lines" />
-                                <p class="philosophy-text">
-                                    住まいの気風を新しくすることで良き人生基盤を構築していきます。
-                                </p>
-                            </div>
-                            <p></p>
-                            <div class="content-inner1">
-                                <h4 class="inner1-title">社是・社訓</h4>
-                                <h2 class="inner1-title-sub">誠心誠意</h2>
-                                <hr class="horizontal-lines" />
-                                <p class="philosophy-text">
-                                    常に"誠心誠意"をもって皆さまと向き合うことを大切にしています。
-                                </p>
-                            </div>
+
+                <section class="job-description">
+                    <div class="job-description-inner">
+                        <div class="job-description-title">
+                            <h6 class="job-description-title-main">
+                                安心・安全を大事にしながら、<br />快適な人生基盤を構築していきます。
+                            </h6>
+                            <hr class="job-description-line" />
+                            <p class="job-description-title-sub">
+                                英ホームは、自然環境、周辺環境に配慮しつつ、<br />人間が暮らしやすい安全で快適な基盤づくりを目指しています。
+                            </p>
                         </div>
-                    </div>
-                </section>
-                <section class="info-policy">
-                    <div class="info-policy-inner">
-                        <div class="policy-title">
-                            <h6 class="policy-title-main">基本三方針</h6>
-                            <p class="policy-title-sub">Policy</p>
-                        </div>
-                        <div class="policy-content">
-                            <div class="policy-content-inner">
-                                <div class="policy-content-inner1">
-                                    <h4 class="policy-inner1-title">01</h4>
-                                    <h2 class="policy-inner1-title-sub">
-                                        安全衛生方針
-                                    </h2>
-                                    <hr class="policy-horizontal-lines" />
-                                    <p class="policy-text">
-                                        全ての現場において「無事故・無災害での完工」を目指し、社員及び協力業者で一丸となって「安全第一」を徹底します。
-                                    </p>
-                                    <p class="policy-text2">
-                                        準拠規格 : OHSAS18001
-                                    </p>
+                        <div class="job-content">
+                            <div class="job-content-inner">
+                                <div class="job-content-inner1">
+                                    <div class="job-content-inner2">
+                                        <div class="job-content-image"></div>
+                                        <h2 class="job-content-title">
+                                            内装リフォーム
+                                        </h2>
+                                        <hr class="job-horizontal-lines" />
+                                        <p class="job-text">
+                                            大阪市、大阪府、の発注リフォーム工事を中心に、国際規格(ISO
+                                            9001)に準拠した、高品質な仕上がりを実現するため、厳しい品質管理を実施しています。
+                                        </p>
+                                    </div>
+                                    <div class="job-link">
+                                        <a href="#"
+                                            ><span class="job-link-text"
+                                                >内装リフォーム工事</span
+                                            ><span class="job-arrow">→</span></a
+                                        >
+                                    </div>
                                 </div>
                                 <p></p>
-                                <div class="policy-content-inner1">
-                                    <h4 class="policy-inner1-title">02</h4>
-                                    <h2 class="policy-inner1-title-sub">
-                                        品質方針
-                                    </h2>
-                                    <hr class="policy-horizontal-lines" />
-                                    <p class="policy-text">
-                                        継続的な品質向上のため、一人ひとりの経験値を共有し、その集合知を研鑽し続ける改善システムを運用していきます。
-                                    </p>
-                                    <p class="policy-text2">
-                                        準拠規格 : ISO9001
-                                    </p>
+                                <div class="job-content-inner1">
+                                    <div class="job-content-inner2">
+                                        <div class="job-content-image2"></div>
+                                        <h2 class="job-content-title">
+                                            外装リフォーム
+                                        </h2>
+                                        <hr class="job-horizontal-lines" />
+                                        <p class="job-text">
+                                            外装リフォーム工事では、住まいの外観を美しく耐久性も向上させ、地域のニーズに応えるサービスを提供しています。
+                                        </p>
+                                    </div>
+                                    <div class="job-link">
+                                        <a href="#"
+                                            ><span class="job-link-text"
+                                                >外装リフォーム工事</span
+                                            ><span class="job-arrow">→</span></a
+                                        >
+                                    </div>
                                 </div>
-                                <div class="policy-content-inner1">
-                                    <h4 class="policy-inner1-title">03</h4>
-                                    <h2 class="policy-inner1-title-sub">
-                                        環境方針
-                                    </h2>
-                                    <hr class="policy-horizontal-lines" />
-                                    <p class="policy-text">
-                                        人と自然の永続的な共存のため、地球環境に配慮しながら「持続可能な開発」に向けて取り組んでいきます。
-                                    </p>
-                                    <p class="policy-text2">
-                                        準拠規格 : ISO14001
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="info-outline">
-                    <div class="info-outline-inner">
-                        <div class="outline-inner-heading">
-                            <div class="outline-head">
-                                <div class="outline-head-subtitle">Outline</div>
-                                <h1 class="outline-head-title">会社概要</h1>
-                            </div>
-                            <div class="outline-body">
-                                <div class="outline-body-main">
-                                    <table class="outline-table">
-                                        <tbody>
-                                            <tr>
-                                                <th>商号</th>
-                                                <td>
-                                                    英ホーム 株式会社 (Suguru
-                                                    Home, Inc.)
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>本社所在地</th>
-                                                <td>
-                                                    〒551-0001　大阪府大阪市大正区三軒家西1-22-25-101
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>連絡先</th>
-                                                <td>
-                                                    E-mail :
-                                                    info@suguruhome.co.jp
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>創業</th>
-                                                <td>2019年(令和元年)2月</td>
-                                                <!-- 創業・設立同じならまとめる -->
-                                            </tr>
-                                            <tr>
-                                                <th>設立</th>
-                                                <td>2019年(令和元年)2月</td>
-                                            </tr>
-                                            <tr>
-                                                <th>資本金</th>
-                                                <td>5,000,000円</td>
-                                            </tr>
-                                            <tr>
-                                                <th>代表者</th>
-                                                <td>小浜 守春</td>
-                                            </tr>
-                                            <tr>
-                                                <th>業務内容</th>
-                                                <td>
-                                                    リフォーム全般<br />店舗設計・施工<br />新築
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>
-                                                    特定建設業の<br />許可について
-                                                </th>
-                                                <td>
-                                                    <p>■許可番号</p>
-                                                    <ul
-                                                        style="
-                                                            margin-bottom: 1em;
-                                                        "
-                                                    >
-                                                        <li>
-                                                            大阪府知事許可（般-１）第152757号
-                                                        </li>
-                                                    </ul>
-                                                    <p>■建設業の種類</p>
-                                                    <ul>
-                                                        <li>建築工事業</li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>スタッフ数</th>
-                                                <td>5名</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="job-content-inner1">
+                                    <div class="job-content-inner2">
+                                        <div class="job-content-image3"></div>
+                                        <h2 class="job-content-title">
+                                            店舗設計・施工
+                                        </h2>
+                                        <hr class="job-horizontal-lines" />
+                                        <p class="job-text">
+                                            お店の雰囲気と機能性を高め、魅力的な空間を実現します。
+                                        </p>
+                                    </div>
+                                    <div class="job-link">
+                                        <a href="#"
+                                            ><span class="job-link-text"
+                                                >店舗設計・施行</span
+                                            ><span class="job-arrow">→</span></a
+                                        >
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- <section class="info-history"></section>歴史を聞いて後で追加 -->
                 <div class="info-recruit">
                     <div class="info-recruit-image">
                         <div class="info-recruit-image-inner">
@@ -450,20 +418,41 @@
                 window.addEventListener("scroll", syncAnimation);
                 syncAnimation();
 
+                const jobMainInner1 =
+                    document.querySelector(".job-main-inner1");
+
+                let originalPosition = null;
+
+                function getOriginalPosition() {
+                    const rect = jobMainInner1.getBoundingClientRect();
+                    originalPosition = rect.top + window.scrollY;
+                }
+
+                function fixElement() {
+                    const currentScroll = window.scrollY;
+                    if (currentScroll >= originalPosition) {
+                        jobMainInner1.style.position = "fixed";
+                        jobMainInner1.style.top = "0";
+                    } else {
+                        jobMainInner1.style.position = "static";
+                    }
+                }
+
+                getOriginalPosition();
+                window.addEventListener("scroll", fixElement);
+
                 var pagetopLink = document.querySelector(".pagetop-link");
 
-                // ページのトップまでスクロールする関数を定義
                 function scrollToTop() {
                     window.scrollTo({
                         top: 0,
-                        behavior: "smooth", // スムーズにスクロールする
+                        behavior: "smooth",
                     });
                 }
 
-                // クリックイベントを追加して、ページのトップまでスクロールする
                 pagetopLink.addEventListener("click", function (event) {
-                    event.preventDefault(); // デフォルトのクリックイベントをキャンセル
-                    scrollToTop(); // ページのトップまでスクロール
+                    event.preventDefault();
+                    scrollToTop();
                 });
             });
         </script>

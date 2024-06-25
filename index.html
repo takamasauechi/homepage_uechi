@@ -10,7 +10,7 @@
     <body>
         <div id="intro">
             <div class="intro-logo"></div>
-            <span class="intro-text">SUGURU HOME CO.,LTD.</span>
+            <span class="intro-text">Suguru Home CO.,LTD.</span>
         </div>
         <header class="head1">
             <div class="menu-container">
@@ -34,17 +34,17 @@
             <div class="slide-overlay" id="slide-overlay">
                 <nav class="menu-nav">
                     <ul>
-                        <li><a href="#">トップ</a></li>
-                        <li><a href="#">英ホームについて</a></li>
-                        <li><a href="#">英ホームができること</a></li>
+                        <li><a href="index.html">トップ</a></li>
+                        <li><a href="info.html">英ホームについて</a></li>
+                        <li><a href="job.html">英ホームができること</a></li>
                         <li>
                             <a href="#">内装</a>
                             <a href="#">外装</a>
                             <a href="#">店舗</a>
                         </li>
                         <li><a href="#">リフォーム通信</a></li>
-                        <li><a href="#">採用情報</a></li>
-                        <li><a href="#">お問い合わせ</a></li>
+                        <li><a href="recruit.html">採用情報</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
                     </ul>
                 </nav>
             </div>
@@ -71,7 +71,7 @@
             </div>
             <div class="suguru-logo1">
                 <div class="intro-logo"></div>
-                <span class="intro-text">SUGURU HOME CO.,LTD.</span>
+                <span class="intro-text">Suguru Home CO.,LTD.</span>
                 <h1 class="suguru-logo1-company-name">英ホーム株式会社</h1>
                 <p class="suguru-logo1-company-policy">
                     <span>ーお客様の思いをカタチにー</span>
@@ -112,7 +112,7 @@
                 <div class="works-main-wrapper">
                     <div class="works-main-content">
                         <div class="works-main-content-text">
-                            <span class="main-content-text2">works</span>
+                            <span class="main-content-text2">Works</span>
                             <h2 class="main-content-text1">
                                 英ホームができること
                             </h2>
@@ -133,7 +133,7 @@
                             英ホームでは内装リフォームに加え、外装・店舗、リフォーム・構築も展開しています。
                         </p>
                         <div class="works-main-memo-link">
-                            <a href="#"
+                            <a href="job.html"
                                 >英ホームができること<span class="arrow2"
                                     >→</span
                                 ></a
@@ -144,7 +144,7 @@
                 <section class="works-Interior">
                     <div class="works-Interior-text">
                         <h2 class="works-Interior-text1">内装リフォーム</h2>
-                        <span class="works-Interior-text1-1">works 01</span>
+                        <span class="works-Interior-text1-1">Works 01</span>
                         <p class="works-Interior-text2">
                             大阪市、大阪府、の発注リフォーム工事を中心に、国際規格(ISO
                             9001)に準拠した、高品質な仕上がりを実現するため、厳しい品質管理を実施しています。
@@ -168,7 +168,7 @@
                     </div>
                     <div class="works-exterior-text">
                         <h2 class="works-exterior-text1">外装リフォーム</h2>
-                        <span class="works-exterior-text1-1">works 02</span>
+                        <span class="works-exterior-text1-1">Works 02</span>
                         <p class="works-exterior-text2">
                             外装リフォーム工事では、住まいの外観を美しく耐久性も向上させ、地域のニーズに応えるサービスを提供しています。
                         </p>
@@ -183,9 +183,9 @@
                     </div>
                 </section>
                 <section class="works-store">
-                    <div class="works-Interior-text">
+                    <div class="works-store-text">
                         <h2 class="works-store-text1">店舗リフォーム</h2>
-                        <span class="works-store-text1-1">works 01</span>
+                        <span class="works-store-text1-1">Works 03</span>
                         <p class="works-store-text2">
                             お店の雰囲気と機能性を高め、魅力的な空間を実現します。
                         </p>
@@ -205,11 +205,10 @@
             </section>
             <div id="instagram-feed"></div>
             <section class="willingness">
-                <div class="willingness-image">
-                    <div class="willingness-image-text">
-                        <span class="willingness-main">くらしをつくる</span>
-                        <span class="willingness-sub">create a life</span>
-                    </div>
+                <div class="willingness-image"></div>
+                <div class="willingness-image-text">
+                    <span class="willingness-main">くらしをつくる</span>
+                    <span class="willingness-sub">Create a Life</span>
                 </div>
             </section>
             <section class="recruit">
@@ -229,10 +228,12 @@
                 </div>
             </section>
             <div class="map">
-                <div class="map-image">
+                <div class="map-inner">
+                    <div class="map-image"></div>
                     <div class="map-text">
                         <div class="map-text-inner">
                             <h3 class="map-title">英ホーム株式会社</h3>
+                            <hr class="map-horizontal-line" />
                             <dl class="map-data-desc">
                                 <dt class="map-data-desc-long">所在地</dt>
                                 <dd>
@@ -410,8 +411,8 @@
                         menuText.textContent = menuButton.classList.contains(
                             "active"
                         )
-                            ? "close"
-                            : "menu";
+                            ? "Close"
+                            : "Menu";
                     });
                 }
 
@@ -487,6 +488,28 @@
                         }
                     });
 
+                    function handleMemoText() {
+                        var screenWidth = window.innerWidth;
+                        var breakpoint = 780;
+                        var memoText = document.querySelector(
+                            ".works-main-memo-text1"
+                        );
+                        var originalText = memoText.innerHTML;
+
+                        if (screenWidth <= breakpoint) {
+                            var newText = originalText.replace(/<br>/g, "");
+                            memoText.innerHTML = newText;
+                        } else {
+                            memoText.innerHTML = originalText; // 元のテキストに戻す
+                        }
+                    }
+
+                    // 初回のページ読み込み時に実行
+                    window.addEventListener("DOMContentLoaded", handleMemoText);
+
+                    // ウィンドウのリサイズ時に実行
+                    window.addEventListener("resize", handleMemoText);
+
                     $(".map-text").each(function () {
                         var elemTop = $(this).offset().top;
                         var elemBottom = elemTop + $(this).outerHeight();
@@ -532,41 +555,49 @@
                     )
                         return;
 
-                    var slideRect = slide.getBoundingClientRect();
-                    var backRect = back.getBoundingClientRect();
+                    var mainMemoRect = mainMemo.getBoundingClientRect();
                     var windowHeight = window.innerHeight;
 
                     if (
-                        slideRect.top <= windowHeight - 10 &&
-                        slideRect.bottom >= 10
+                        mainMemoRect.top <= windowHeight - 10 &&
+                        mainMemoRect.bottom >= 10
                     ) {
-                        slide.classList.add("hidden");
-                        filter.classList.add("hidden");
-                    } else {
-                        slide.classList.remove("hidden");
-                        filter.classList.remove("hidden");
-                    }
-
-                    if (
-                        backRect.top <= windowHeight - 13 &&
-                        backRect.bottom >= 13
-                    ) {
-                        back.classList.add("hidden");
-                    } else {
-                        back.classList.remove("hidden");
-                    }
-
-                    if (
-                        backRect.top <= windowHeight - 13 &&
-                        backRect.bottom >= 13
-                    ) {
+                        // .works-main-memoが画面内にある場合
                         mainContentText.classList.add("visible");
                         mainMemo.classList.add("visible");
                     } else {
+                        // .works-main-memoが画面外にある場合
                         mainContentText.classList.remove("visible");
                         mainMemo.classList.remove("visible");
                     }
+
+                    if (slide) {
+                        var slideRect = slide.getBoundingClientRect();
+                        if (
+                            slideRect.top <= windowHeight - 10 &&
+                            slideRect.bottom >= 10
+                        ) {
+                            slide.classList.add("hidden");
+                            filter.classList.add("hidden");
+                        } else {
+                            slide.classList.remove("hidden");
+                            filter.classList.remove("hidden");
+                        }
+                    }
+
+                    if (back) {
+                        var backRect = back.getBoundingClientRect();
+                        if (
+                            backRect.top <= windowHeight - 13 &&
+                            backRect.bottom >= 13
+                        ) {
+                            back.classList.add("hidden");
+                        } else {
+                            back.classList.remove("hidden");
+                        }
+                    }
                 });
+
                 $(document).ready(function () {
                     function updateTransform() {
                         $(
